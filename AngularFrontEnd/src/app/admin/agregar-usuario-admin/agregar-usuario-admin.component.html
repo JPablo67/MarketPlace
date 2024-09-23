@@ -1,0 +1,99 @@
+<app-nav-bar-admin></app-nav-bar-admin>
+<br>
+<form class="col-lg-6 offset-lg-2">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Cedula</label>
+      <input type="text"[(ngModel)]="usuario.idUser" name="cedula_usuario" class="form-control" id="" placeholder="Nombre">
+    </div>
+  
+    <div class="form-group">
+      <label for="exampleInputPassword1">Nombres</label>
+      <input type="text"[(ngModel)]="usuario.name" name="nombre_usuario" class="form-control" id="exampleInputPassword1" placeholder="Nombres">
+    </div>
+  
+    <div class="form-group">
+      <label for="exampleInputPassword1">Apellidos</label>
+      <input type="text"[(ngModel)]="usuario.lastname" name="apellido_usuario" class="form-control" id="exampleInputPassword1" placeholder="Apellidos">
+    </div>
+  
+    <div class="form-group">
+      <label for="exampleInputPassword1">Email</label>
+      <input type="text"[(ngModel)]="usuario.email" name="email_usuario" class="form-control" id="exampleInputPassword1" placeholder="Email">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Dirección</label>
+      <input type="text"[(ngModel)]="usuario.address" name="address" class="form-control" id="exampleInputPassword1" placeholder="Dirección">
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputPassword1">Contrasena</label>
+        <input type="text"[(ngModel)]="usuario.password" name="constrasenia" class="form-control" id="exampleInputPassword1" placeholder="Contrasena">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputPassword1">Telefono</label>
+        <input type="text"[(ngModel)]="usuario.phoneNumber" name="telefono_usuario" class="form-control" id="exampleInputPassword1" placeholder="Telefono">
+      </div>
+    
+     
+
+            
+      <div class="form-group">
+        <label for="tipoUsuario">Tipo de usuario</label>
+        <select [(ngModel)]="usuario.userType" name="tipo_usuario" class="form-control" id="tipoUsuario">
+          <option value="Cliente">Cliente</option>
+          <option value="Admin">Admin</option>
+          <option value="Empleado">Empleado</option>
+        </select>
+      </div>
+          
+
+
+  
+    <br>
+  
+    <div class="row">
+      <div class="col"><button class="btn btn-primary" (click)="addUsuario()">Registrar</button></div>
+
+    </div>
+  </form>
+
+
+  <div class="container">
+    <h1>Usuarios</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Cedula</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Email</th>
+                <th>Contraseña</th>
+                <th>Tipo usuario</th>
+                <th>Telefono</th>
+                <th>Acciones</th> <!-- Nueva columna para botones de acciones -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let usuario of usuarios">
+                <td>{{usuario.idUser}}</td>
+                <td>{{usuario.name}}</td>
+                <td>{{usuario.lastname}}</td>
+                <td>{{usuario.email}}</td>
+                <td>{{usuario.password}}</td>
+                <td>{{usuario.userType}}</td>
+                <td>{{usuario.address}}</td>
+                <td>{{usuario.phoneNumber}}</td>
+                <td>
+                  <div class="row">
+                    <div class="col"><button class="btn btn-primary" (click)="usuarioUpdate(usuario.idUser)">Editar</button></div>
+                    <div class ="col"><button class="btn btn-danger" (click)="usuarioDelete(usuario.idUser)">Eliminar</button></div>
+              
+                  </div>
+                   
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

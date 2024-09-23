@@ -1,0 +1,5 @@
+# Ignore node_modules directory
+AngularFrontEnd/node_modules/
+
+# Ignore .angular cache directory
+AngularFrontEnd/.angular/cache/

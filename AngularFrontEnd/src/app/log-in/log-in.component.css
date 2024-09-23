@@ -1,0 +1,26 @@
+/* Estilos personalizados para el formulario */
+.card {
+	border: none;
+  }
+  
+  .card-body {
+	padding: 40px;
+  }
+  
+  .form-link {
+	color: #007bff;
+	text-decoration: none;
+  }
+  
+  .form-link:hover {
+	text-decoration: underline;
+  }
+  
+  /* Estilos para el mensaje de error de validación */
+  .invalid-feedback {
+	display: block;
+	margin-top: 5px;
+	font-size: 80%;
+	color: #dc3545;
+  }
+  

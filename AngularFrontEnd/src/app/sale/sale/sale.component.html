@@ -1,0 +1,31 @@
+<!-- sale.component.html -->
+
+<div class="container mt-4">
+  <form *ngIf="!purchaseSuccessful">
+    <div class="mb-3">
+      <label for="direccion" class="form-label">Dirección:</label>
+      <input type="text" id="direccion" name="direccion" [(ngModel)]="sale.address" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="telefono" class="form-label">Teléfono:</label>
+      <input type="text" id="telefono" name="telefono" [(ngModel)]="sale.phoneNumber" class="form-control" required>
+    </div>
+
+    <div class ="row">
+    <div class="col"><button type="button" class="btn btn-primary" (click)="realizarCompra()">Realizar Compra</button></div>
+    <div class="col"><button type="button" class="btn btn-primary" (click)="atras()">Atras</button></div>
+  </div>
+  </form>
+
+  <!-- Display a message when the purchase is successful -->
+  <div *ngIf="purchaseSuccessful" class="mt-4">
+    <p class="alert alert-success">Compra realizada con éxito. Descarga tu PDF:</p>
+    <button type="button" class="btn btn-success" (click)="downloadPDF()">Descargar PDF</button>
+  </div>
+
+  <div *ngIf="purchaseSuccessful" class="mt-4">
+    <p class="alert alert-success">Ya puedes seguir comprado!!!</p>
+    <button type="button" class="btn btn-success" (click)="atras()">Atras</button>
+  </div>
+</div>
