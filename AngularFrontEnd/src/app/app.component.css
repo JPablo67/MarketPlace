@@ -1,27 +1,14 @@
-html{
-    position:relative; 
-    min-height: 100%;
-  }
-  /*Normalize html and body elements,this style is just good to have*/
-  html,body{
-    margin:0;
-    padding:0;
-  }
-  .pageContentWrapper{
-    margin-bottom:100px;/* Height of footer*/
-  } 
-  .footer{
-      
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background:#ccc;
-  }
+.app-container {
+  display: grid;
+  grid-template-rows: 1fr auto; /* Main content takes available space, footer takes auto height */
+  min-height: 100vh; /* Ensure the container takes full height */
+}
 
-
-
-
-
-
+.app-footer {
+   /* Example background color */
+  color: white; /* Example text color */
+  padding: 10px;
+  text-align: center;
+}
 
 
